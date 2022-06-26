@@ -12,7 +12,7 @@ const useStyles = makeStyles((theme) => ({
     display: "flex",
     flexDirection: "column",
     justifyContent: "center",
-    alignItems: "center",
+    alignItems: "left",
     flexWrap: "wrap",
     listStyle: "none",
     padding: theme.spacing(1.5),
@@ -67,6 +67,14 @@ const MovieDetails = ( props) => {
           label={`${movie.vote_average} (${movie.vote_count}`}
         />
         <Chip label={`Released: ${movie.release_date}`} />
+      </Paper>
+      <Paper component="ul" className={classes.chipSet}>
+        <Chip label="Production Countries" color="primary"/>
+        {movie.production_countries.map((g) => (
+          <li key={g.name}>
+            <Chip label={g.name} className={classes.chip} />
+          </li>
+        ))}
       </Paper>
       </div>
       </>
