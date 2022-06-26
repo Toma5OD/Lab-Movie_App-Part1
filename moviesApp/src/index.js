@@ -1,13 +1,10 @@
-import { YoutubeSearchedFor } from "@material-ui/icons";
 import React from "react";
 import ReactDOM from "react-dom";
 import MovieDetailsPage from './pages/movieDetailsPage'
 
 const images = [
-    "/kOVEVeg59E0wsnXmF9nrh6OmWII.jpg",
-    "/v1QQKq8M0fWxMgSdGOX1aCv8qMB.jpg",
-    "/2iGN0aKHJYD0xQydlfuCUAcgNbO.jpg",
-    "/rjBwhsOzHKUw2NIOrE7aMqjfe6s.jpg",
+    "/2W4ZvACURDyhiNnSIaFPHfNbny3.jpg",
+    "/ewMNLXgDyiyaBGdCzQqCF8hKWy2.jpg",
 ]
 
 const sample = {
@@ -80,7 +77,7 @@ const sample = {
         },
     ],
     status: "Released",
-    tagline: "Darkness rises... and light to meet it",
+    tagline: "To Save our world she must invade theirs.",
     title: "Star Wars: The Last Jedi",
     video: false,
     vote_average: 5.7,
