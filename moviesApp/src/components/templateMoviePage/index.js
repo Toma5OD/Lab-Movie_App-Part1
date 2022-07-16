@@ -8,6 +8,7 @@ import { getMovieImages } from "../../api/tmdb-api";
 
 const useStyles = makeStyles((theme) => ({
   root: {
+    backgroundColor: "#bfbfbf",
     paddingTop: theme.spacing(7),
   },
   imageListRoot: {
