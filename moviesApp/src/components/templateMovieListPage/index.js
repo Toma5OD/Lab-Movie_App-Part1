@@ -7,7 +7,7 @@ import Drawer from "@material-ui/core/Drawer";
 import { makeStyles } from "@material-ui/core/styles";
 import MovieList from "../movieList";
 
-const useStyles = makeStyles((theme) =>  ({
+const useStyles = makeStyles((theme) => ({
   root: {
     backgroundColor: "#bfbfbf",
     paddingTop: theme.spacing(7),
@@ -20,7 +20,7 @@ const useStyles = makeStyles((theme) =>  ({
   },
 }));
 
-function MovieListPageTemplate({ movies, title, selectFavourite }) {
+function MovieListPageTemplate({ movies, title, action }) {
   const classes = useStyles();
   const [titleFilter, setTitleFilter] = useState("");
   const [genreFilter, setGenreFilter] = useState("0");
@@ -43,15 +43,15 @@ function MovieListPageTemplate({ movies, title, selectFavourite }) {
 
   return (
     <>
-    <Grid container className={classes.root}>
-      <Grid item xs={12}>
-        <Header title={title} />
+      <Grid container className={classes.root}>
+        <Grid item xs={12}>
+          <Header title={title} />
+        </Grid>
+        <Grid item container spacing={5}>
+          <MovieList action={action} movies={displayedMovies} />
+        </Grid>
       </Grid>
-      <Grid item container spacing={5}>
-        <MovieList selectFavourite={selectFavourite} movies={displayedMovies} />
-      </Grid>
-    </Grid>
-    <Fab
+      <Fab
         color="secondary"
         variant="extended"
         onClick={() => setDrawerOpen(true)}
@@ -70,7 +70,7 @@ function MovieListPageTemplate({ movies, title, selectFavourite }) {
           genreFilter={genreFilter}
         />
       </Drawer>
-    </>    
+    </>
   );
 }
 export default MovieListPageTemplate;
