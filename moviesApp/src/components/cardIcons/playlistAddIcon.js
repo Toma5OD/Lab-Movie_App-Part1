@@ -1,9 +1,20 @@
-import React from "react";
-import PlaylistAddIcon from '@material-ui/icons/PlaylistAdd';
+import React, {useContext} from "react";
+import { MoviesContext } from "../../contexts/moviesContext";
+import PlaylistAddIcon from "@material-ui/icons/PlaylistAdd";
+import IconButton from "@material-ui/core/IconButton";
 
-const MyPlaylistAddIcon = () => {
+const MyPlaylistAddIcon = ({movie}) => {
+    const context = useContext(MoviesContext);
+
+    const handleAddToMustWatchList = (e) => {
+        e.preventDefault();
+        context.addToMustWatchList(movie);
+    }
+
     return (
-        <PlaylistAddIcon color="primary" fontSize="large" />
+        <IconButton aria-label="add to must watch list" onClick={handleAddToMustWatchList}>
+            <PlaylistAddIcon color="primary" fontSize="large" />
+        </IconButton>
     )
 };
 
